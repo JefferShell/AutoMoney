@@ -1,6 +1,5 @@
 package com.chanjet.datas;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import com.chanjet.exception.ReadDatasException;
@@ -24,6 +23,4 @@ public class Datas {
 	public String getPwd(){
 		return config.getString("pwd");
 	}
-	
-
 }
