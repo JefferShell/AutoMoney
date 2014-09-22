@@ -26,12 +26,5 @@ public class Datas {
 	}
 	
 	
-//	public static void main(String args[]){
-//		try {
-//			System.out.print(new Datas().getUserName());
-//		} catch (ReadDatasException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
+
 }
