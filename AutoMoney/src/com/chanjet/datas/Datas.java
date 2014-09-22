@@ -24,7 +24,15 @@ public class Datas {
 	public String getPwd(){
 		return config.getString("pwd");
 	}
-	
+	public static void main(String[] args) {
+		try {
+			System.out.println(new Datas().getUserName());
+			System.out.println(new Datas().getPwd());
+		} catch (ReadDatasException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 
 }
