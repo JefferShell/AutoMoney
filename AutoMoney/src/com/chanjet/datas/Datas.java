@@ -25,6 +25,5 @@ public class Datas {
 		return config.getString("pwd");
 	}
 	
-	
 
 }
