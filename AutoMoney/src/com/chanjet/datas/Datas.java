@@ -25,6 +25,7 @@ public class Datas {
 		return config.getString("pwd");
 	}
 	
+	
 //	public static void main(String args[]){
 //		try {
 //			System.out.print(new Datas().getUserName());
