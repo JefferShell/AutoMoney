@@ -3,7 +3,6 @@ package com.chanjet.datas;
 import java.io.IOException;
 
 import com.chanjet.exception.ReadAdressException;
-import com.chanjet.exception.ReadDatasException;
 import com.chanjet.utils.Config;
 
 public class AdressList {
