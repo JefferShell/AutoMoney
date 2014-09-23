@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import com.chanjet.datas.DatasItf;
 import com.chanjet.datas.UserInfo;
+import com.chanjet.page.LoginPage;
 import com.chanjet.page.MainPage;
 import com.chanjet.utils.BaseUtil;
 
@@ -21,6 +22,11 @@ public class ReleaseCase {
 		System.out.println("case  begin");
 		this.util.driver.get(datas.getMainAddByName("beijing"));
 		this.util.handler.clickXpath(MainPage.login_button);
+		this.util.handler.clickXpath(LoginPage.user_pwd__button);
+		this.util.handler.inputText(LoginPage.user_input, datas.getUserName());
+		this.util.handler.inputText(LoginPage.pwd_input, datas.getPwd());
+		this.util.handler.clickXpath(LoginPage.login_button);
+		this.util.handler.clickXpath(MainPage.sanxing_label);
 		Thread.sleep(5000);
 		this.util.driver.quit();
 		
@@ -33,6 +39,7 @@ public class ReleaseCase {
 	
 	public static void main(String args[]){
 		try {
+			
 			new ReleaseCase().testcase();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
