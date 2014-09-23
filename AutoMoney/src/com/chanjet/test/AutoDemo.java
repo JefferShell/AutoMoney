@@ -1,6 +1,6 @@
 package com.chanjet.test;
 
-import com.chanjet.datas.AdressList;
+import com.chanjet.datas.AddressList;
 import com.chanjet.utils.Config;
 
 
@@ -13,7 +13,7 @@ public class AutoDemo {
 //		auto.init();
 //		System.out.println(auto.getString("WebURL"));
 //		System.out.println(auto.getString("Explorer"));
-		AdressList list = new AdressList();
+		AddressList list = new AddressList();
 		System.out.println(list.getAdressByName("beijing"));
 		}
 		catch(Exception e){

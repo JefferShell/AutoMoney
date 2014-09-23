@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 
+import com.chanjet.datas.AddressList;
 import com.chanjet.page.LoginPage;
 import com.chanjet.utils.Common;
 import com.chanjet.utils.Config;
@@ -18,6 +19,7 @@ public class BaseCase {
 	public Handler handler = null;
 	public Config  config = null;
 	private String configPath = "AutotestConfig.properties";
+	public AddressList address = null;
 	
 	public BaseCase() throws Exception {
 		System.out.println("---------------------");
@@ -28,6 +30,7 @@ public class BaseCase {
 	private void init() throws Exception {
 		// TODO 初始化程序，读取配置文件
 		config = new Config(configPath);
+		address = new AddressList(config.getString("addressPath"));
 		if(config.getString("Explorer").equals("Chrome")){
 			System.setProperty("webdriver.chrome.driver","D:/chromedriver.exe");
 			driver = new ChromeDriver();

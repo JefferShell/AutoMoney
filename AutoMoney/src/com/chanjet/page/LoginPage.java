@@ -11,7 +11,7 @@ public class LoginPage extends BaseCase{
 	
 	public LoginPage() throws Exception {
 		super();
-		driver.get(config.getString("WebURL"));
+		driver.get(config.getString(this.address.getAdressByName("beijing")));
 	}
 	public LoginPage(String name,String pwd) throws Exception {
 		super();
