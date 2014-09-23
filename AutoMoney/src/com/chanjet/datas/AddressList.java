@@ -3,7 +3,7 @@ package com.chanjet.datas;
 import java.io.IOException;
 
 import com.chanjet.exception.ReadAdressException;
-import com.chanjet.utils.Config;
+import com.chanjet.tools.Config;
 
 public class AddressList {
 	private String dataPath = "address.txt";
@@ -14,7 +14,7 @@ public class AddressList {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			throw new ReadAdressException("璇诲彇鍦板潃閿欒");
+			throw new ReadAdressException("读取地址文件错误");
 		}
 	}
 	public AddressList(String Path) throws ReadAdressException{
@@ -23,7 +23,7 @@ public class AddressList {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			throw new ReadAdressException("璇诲彇鍦板潃閿欒");
+			throw new ReadAdressException("读取地址文件错误");
 		}
 	}
 	public String getAdressByName(String addressName){
