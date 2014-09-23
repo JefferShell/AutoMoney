@@ -1,5 +1,6 @@
 package com.chanjet.test;
 
+import com.chanjet.datas.AdressList;
 import com.chanjet.utils.Config;
 
 
@@ -8,10 +9,12 @@ public class AutoDemo {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try{
-		AutoDemo auto = new AutoDemo();
-		auto.init();
-		System.out.println(auto.getString("WebURL"));
-		System.out.println(auto.getString("Explorer"));
+//		AutoDemo auto = new AutoDemo();
+//		auto.init();
+//		System.out.println(auto.getString("WebURL"));
+//		System.out.println(auto.getString("Explorer"));
+		AdressList list = new AdressList();
+		System.out.println(list.getAdressByName("beijing"));
 		}
 		catch(Exception e){
 			e.printStackTrace();
