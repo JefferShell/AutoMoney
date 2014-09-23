@@ -2,35 +2,31 @@ package com.chanjet.datas;
 
 import java.io.IOException;
 
+import com.chanjet.exception.ReadAdressException;
 import com.chanjet.exception.ReadDatasException;
 import com.chanjet.utils.Config;
 
-public class Datas {
-	private String dataPath = "datas.txt";
+public class AdressList {
+	private String dataPath = "address.txt";
 	private Config config = null;
-	public Datas() throws ReadDatasException{
+	public AdressList() throws ReadAdressException{
 		try {
 			config = new Config(dataPath);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			throw new ReadDatasException("读取账号错误");
+			throw new ReadAdressException("读取地址错误");
 		}
 	}
-	public String getUserName(){
-		return config.getString("userName");
-	}
-	public String getPwd(){
-		return config.getString("pwd");
+	public String getAdressByName(String addressName){
+		return config.getString(addressName);
 	}
 	public static void main(String[] args) {
 		try {
-			System.out.println(new Datas().getUserName());
-			System.out.println(new Datas().getPwd());
-		} catch (ReadDatasException e) {
+			System.out.println(new AdressList().getAdressByName("beijing"));
+		} catch (ReadAdressException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
 }
