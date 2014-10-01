@@ -3,19 +3,27 @@ package com.chanjet.datas;
 import java.io.IOException;
 
 import com.chanjet.exception.ReadAdressException;
-import com.chanjet.exception.ReadDatasException;
-import com.chanjet.utils.Config;
+import com.chanjet.tools.Config;
 
-public class AdressList {
+public class AddressList {
 	private String dataPath = "address.txt";
 	private Config config = null;
-	public AdressList() throws ReadAdressException{
+	public AddressList() throws ReadAdressException{
 		try {
 			config = new Config(dataPath);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			throw new ReadAdressException("璇诲彇鍦板潃閿欒");
+			throw new ReadAdressException("读取地址文件错误");
+		}
+	}
+	public AddressList(String Path) throws ReadAdressException{
+		try {
+			config = new Config(Path);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new ReadAdressException("读取地址文件错误");
 		}
 	}
 	public String getAdressByName(String addressName){
@@ -23,10 +31,11 @@ public class AdressList {
 	}
 	public static void main(String[] args) {
 		try {
-			System.out.println(new AdressList().getAdressByName("beijing"));
+			System.out.println(new AddressList().getAdressByName("beijing"));
 		} catch (ReadAdressException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	
 }
